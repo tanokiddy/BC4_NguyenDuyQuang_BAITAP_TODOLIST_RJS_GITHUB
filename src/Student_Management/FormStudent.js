@@ -83,30 +83,31 @@ class FormStudent extends Component {
         </div>
         <div className="my-2 ">
           <button
+            id="addStudent"
             onClick={() => {
-              let { studentCode, phoneNumber, fullName, email } = this.state;
-              let newStudent = {
-                studentCode: studentCode,
-                phoneNumber: phoneNumber,
-                fullName: fullName,
-                email: email,
-              };
-              this.props.dispatch(addStudentAction(newStudent));
+              this.props.dispatch(addStudentAction(this.state));
+              this.setState({
+                studentCode: "",
+                phoneNumber: "",
+                fullName: "",
+                email: "",
+              });
             }}
             className="btn btn-success"
           >
             Add student
           </button>
           <button
+            style={{ display: "none" }}
+            id="updateStudent"
             onClick={() => {
-              let { studentCode, phoneNumber, fullName, email } = this.state;
-              let newStudent = {
-                studentCode: studentCode,
-                phoneNumber: phoneNumber,
-                fullName: fullName,
-                email: email,
-              };
-              this.props.dispatch(updateStudentAction(newStudent));
+              this.props.dispatch(updateStudentAction(this.state));
+              this.setState({
+                studentCode: "",
+                phoneNumber: "",
+                fullName: "",
+                email: "",
+              });
             }}
             className="btn btn-warning ml-3"
           >

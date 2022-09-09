@@ -1,4 +1,4 @@
-export let validator = {
+export const validator = {
   kiemTraRong: function (value, idError, message) {
     if (value.length == 0) {
       document.getElementById(idError).innerText = message;
