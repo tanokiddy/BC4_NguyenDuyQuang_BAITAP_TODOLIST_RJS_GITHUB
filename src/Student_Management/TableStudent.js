@@ -58,7 +58,7 @@ class TableStudent extends Component {
 let mapStateToProps = (state) => {
   return {
     studentList: state.studentReducer.studentList,
-    studentEdit: state.studentReducer.studentEdit,
+    // studentEdit: state.studentReducer.studentEdit,
   };
 };
 

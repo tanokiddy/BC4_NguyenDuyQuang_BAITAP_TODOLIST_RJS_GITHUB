@@ -67,7 +67,15 @@ export default (state = initialState, action) => {
           "vui lòng nhập đúng định dạng email"
         );
       if (isValid) {
-        cloneStudentList = [...cloneStudentList, action.newStudent];
+        let index = cloneStudentList.findIndex((student) => {
+          return student.studentCode == action.newStudent.studentCode;
+        });
+        if (index !== -1) {
+          alert("mã sinh viên đã tồn tại, vui lòng nhập lại");
+          // return {...state}
+        } else {
+          cloneStudentList = [...cloneStudentList, action.newStudent];
+        }
       }
       return { ...state, studentList: cloneStudentList };
     }

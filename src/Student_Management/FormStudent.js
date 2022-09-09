@@ -86,12 +86,6 @@ class FormStudent extends Component {
             id="addStudent"
             onClick={() => {
               this.props.dispatch(addStudentAction(this.state));
-              this.setState({
-                studentCode: "",
-                phoneNumber: "",
-                fullName: "",
-                email: "",
-              });
             }}
             className="btn btn-success"
           >
@@ -102,6 +96,13 @@ class FormStudent extends Component {
             id="updateStudent"
             onClick={() => {
               this.props.dispatch(updateStudentAction(this.state));
+            }}
+            className="btn btn-warning ml-3"
+          >
+            Update
+          </button>
+          <button
+            onClick={() => {
               this.setState({
                 studentCode: "",
                 phoneNumber: "",
@@ -109,9 +110,9 @@ class FormStudent extends Component {
                 email: "",
               });
             }}
-            className="btn btn-warning ml-3"
+            className="btn btn-secondary ml-3"
           >
-            Update
+            Clear form
           </button>
         </div>
       </div>
@@ -133,7 +134,7 @@ class FormStudent extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    studentList: state.studentReducer.studentList,
+    // studentList: state.studentReducer.studentList,
     studentEdit: state.studentReducer.studentEdit,
   };
 };
