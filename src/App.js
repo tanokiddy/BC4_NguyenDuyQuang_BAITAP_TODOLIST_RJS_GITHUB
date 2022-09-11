@@ -1,11 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Student_Management from "./Student_Management/Student_Management";
+import ToDoList from "./Todolist_StyledComponents/ToDoList/ToDoList";
 
 function App() {
   return (
     <div className="App">
-      <Student_Management />
+      <ToDoList />
     </div>
   );
 }
